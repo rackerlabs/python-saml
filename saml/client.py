@@ -24,7 +24,7 @@ def send(uri, message, relay_state=None, protocol='redirect'):
             name = 'SAMLResponse'
 
         # Serialize and encode the message.
-        text = base64.b64encode(zlib.compress(etree.tostring(message))[2:-4])
+        text = base64.b64encode(etree.tostring(message))
 
         # Build the parameters.
         parameters = {name: text}
